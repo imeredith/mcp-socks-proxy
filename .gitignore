@@ -1,0 +1,15 @@
+# Build output
+/target
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Editors and OS files
+.idea/
+.vscode/
+*.swp
+.DS_Store

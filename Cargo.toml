@@ -1,0 +1,24 @@
+[package]
+name = "mcp-socks-proxy"
+version = "0.1.0"
+edition = "2024"
+description = "Reach HTTP MCP servers through a SOCKS proxy, from clients such as Claude Code"
+
+[dependencies]
+anyhow = "1"
+axum = "0.8"
+clap = { version = "4", features = ["derive", "env"] }
+futures-util = "0.3"
+# No gzip/brotli features: `serve` passes bodies through untouched, so reqwest must not decompress them.
+reqwest = { version = "0.13", default-features = false, features = ["rustls", "http2", "socks", "stream"] }
+serde_json = "1"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "io-std", "io-util", "net", "sync", "time"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["full"] }
+
+[profile.release]
+lto = true
+strip = true
