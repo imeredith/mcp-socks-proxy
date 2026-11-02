@@ -3,6 +3,7 @@ name = "mcp-socks-proxy"
 version = "0.1.0"
 edition = "2024"
 description = "Reach HTTP MCP servers through a SOCKS proxy, from clients such as Claude Code"
+license = "MIT"
 
 [dependencies]
 anyhow = "1"

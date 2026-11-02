@@ -85,3 +85,7 @@ cargo test
 ```
 
 The end-to-end tests run the binary against a fake MCP server through a small SOCKS5 server.
+
+## License
+
+MIT
